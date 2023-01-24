@@ -5,3 +5,4 @@ commit_templates:
     template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
   - label: Commit message from file
     template_path: 'gitmessage.txt'
+    
