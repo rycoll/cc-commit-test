@@ -1,3 +1,5 @@
+collections_config:
+
 commit_templates:
   - label: Timestamped commit
     template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
