@@ -1,6 +1,16 @@
 collections_config:
 
 commit_templates:
+  - label: Semantic commit
+    template_string: '{kind}: {message}'
+    _inputs:
+      kind:
+        type: select
+        options:
+          values:
+            - Chore
+            - Feat
+            - Fix
   - label: Timestamped commit
     template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
   - label: Commit message from file
