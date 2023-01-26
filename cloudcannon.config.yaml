@@ -2,7 +2,7 @@ collections_config:
 
 commit_templates:
   - label: Semantic commit
-    template_string: '{kind|uppercase}: {message|trim|lowercase}'
+    template_string: '{kind|uppercase}: {message} [[date|year]]'
     _inputs:
       kind:
         type: select
@@ -23,4 +23,3 @@ commit_templates:
   - label: Describe changes
     template_string: '[changes]'
   - template_string: Unlabelled!
-
