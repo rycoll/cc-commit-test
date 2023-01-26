@@ -14,6 +14,8 @@ commit_templates:
     default_data:
       kind: Fix
       message: This is a commit message
+  - label: Freeform
+    template_string: 'Write whatever you want here!'
   - label: Timestamped commit
     template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
   - label: Commit message from file
