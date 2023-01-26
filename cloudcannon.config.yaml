@@ -22,3 +22,4 @@ commit_templates:
     template_path: 'gitmessage.txt'
   - label: Describe changes
     template_string: '[changes]'
+
