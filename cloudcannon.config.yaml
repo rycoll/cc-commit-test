@@ -11,10 +11,12 @@ commit_templates:
             - Chore
             - Feat
             - Fix
+    default_data:
+      kind: Fix
   - label: Timestamped commit
     template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
   - label: Commit message from file
     template_path: 'gitmessage.txt'
   - label: Describe changes
     template_string: '[changes]'
-    
+
