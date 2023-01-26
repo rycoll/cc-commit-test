@@ -11,6 +11,9 @@ commit_templates:
             - Chore
             - Feat
             - Fix
+        comment: "What kind of change has been made?"
+      message:
+        comment: "Limit this to 50 characters please"
     default_data:
       kind: Fix
       message: This is a commit message
