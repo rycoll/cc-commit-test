@@ -13,10 +13,10 @@ commit_templates:
             - Fix
     default_data:
       kind: Fix
+      message: This is a commit message
   - label: Timestamped commit
     template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
   - label: Commit message from file
     template_path: 'gitmessage.txt'
   - label: Describe changes
     template_string: '[changes]'
-
