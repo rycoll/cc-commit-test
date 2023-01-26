@@ -2,7 +2,7 @@ collections_config:
 
 commit_templates:
   - label: Semantic commit
-    template_string: '{kind}: {message|trim}'
+    template_string: '{kind|uppercase}: {message|trim}'
     _inputs:
       kind:
         type: select
