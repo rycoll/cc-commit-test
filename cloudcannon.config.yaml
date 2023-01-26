@@ -23,4 +23,3 @@ commit_templates:
   - label: Describe changes
     template_string: '[changes]'
   - template_string: Unlabelled!
-
