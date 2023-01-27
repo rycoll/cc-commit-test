@@ -44,4 +44,19 @@ commit_templates:
         comment: "Limit this to 50 characters please"
   - label: Placeholders without inputs
     template_string: '[date|year] {kind}: {message}'
-
+  - label: Crazy inputs
+    template_string: 'Textarea: {textarea}\nRich text: {rich_text}\nLink: {link}\nImage: {image}\nList: {list}\nObject: {obj}'
+    _inputs:
+      textarea:
+        type: textarea
+      rich_text:
+        type: html
+      link:
+        type: url
+      image:
+        type: image
+      list:
+        type: array
+      object:
+        type: object
+      
