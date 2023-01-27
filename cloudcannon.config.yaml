@@ -27,5 +27,19 @@ commit_templates:
     template_string: '[changes]'
   - template_string: Unlabelled!
   - template_string: '{message|wrap_at:5}'
-
+  - label: Inputs without placeholders
+    template_string: '[date|year] Commit message'
+    _inputs:
+      kind:
+        type: select
+        options:
+          values:
+            - Chore
+            - Feat
+            - Fix
+        comment: "What kind of change has been made?"
+      message:
+        comment: "Limit this to 50 characters please"
+  - label: Placeholders without inputs
+    template_string: '[date|year] {kind}: {message}'
 
