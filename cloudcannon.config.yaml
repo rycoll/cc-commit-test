@@ -1,5 +1,6 @@
 collections_config:
 
+
 _inputs:
   commit_type:
     type: select
@@ -54,10 +55,14 @@ commit_templates:
   - label: Placeholders without inputs
     template_string: '[date|year] {kind}: {message}'
   - label: Crazy inputs
-    template_string: 'Textarea: {textarea}\nRich text: {rich_text}\nLink: {link}\nImage: {image}\nList: {list}\nObject: {obj}'
+    template_string: >- 
+      URL {url}
+      Image {image}
+      Color {color}
+      Rich Text {rich_text}
+      List {list}
+      Object {object}
     _inputs:
-      textarea:
-        type: textarea
       link:
         type: url
       image:
