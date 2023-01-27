@@ -1,3 +1,4 @@
+
 collections_config:
 
 commit_templates:
@@ -55,8 +56,8 @@ commit_templates:
         type: url
       image:
         type: image
-      list:
-        type: array
-      object:
-        type: object
+      # list:
+      #   type: array
+      # object:
+      #   type: object
       
