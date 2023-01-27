@@ -1,9 +1,18 @@
 
 collections_config:
 
+_inputs:
+  commit_type:
+    type: select
+    options:
+      values:
+        - Chore
+        - Feat
+        - Fix
+
 commit_templates:
   - label: Semantic commit
-    template_string: '{kind|trim}: { message |   trim } [[ date  |year]]'
+    template_string: '{commit_type|trim}: { message |   trim } [[ date  |year]]'
     _inputs:
       kind:
         type: select
