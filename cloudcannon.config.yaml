@@ -1,5 +1,3 @@
-
-
 collections_config:
 
 _inputs:
@@ -64,8 +62,8 @@ commit_templates:
         type: url
       image:
         type: image
-      # rich_text:
-      #   type: html
+      rich_text:
+        type: html
       # list:
       #   type: array
       # object:
