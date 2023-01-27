@@ -50,12 +50,12 @@ commit_templates:
     _inputs:
       textarea:
         type: textarea
-      rich_text:
-        type: html
       link:
         type: url
       image:
         type: image
+      # rich_text:
+      #   type: html
       # list:
       #   type: array
       # object:
