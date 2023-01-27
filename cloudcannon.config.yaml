@@ -57,10 +57,15 @@ commit_templates:
   - label: Crazy inputs
     template_string: >- 
       URL {url}
+      
       Image {image}
+      
       Color {color}
+      
       Rich Text {rich_text}
+      
       List {list}
+      
       Object {object}
     _inputs:
       link:
