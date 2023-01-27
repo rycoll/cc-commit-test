@@ -24,7 +24,7 @@ commit_templates:
   - label: Commit message from file
     template_path: 'gitmessage.txt'
   - label: Commit message from missing file
-    template_path: 'gitmessage.txt'
+    template_path: 'gitmossoge.txt'
   - label: Describe changes
     template_string: '[changes]'
   - template_string: Unlabelled!
@@ -44,3 +44,4 @@ commit_templates:
         comment: "Limit this to 50 characters please"
   - label: Placeholders without inputs
     template_string: '[date|year] {kind}: {message}'
+
