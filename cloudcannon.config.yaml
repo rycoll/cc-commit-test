@@ -1,6 +1,5 @@
 collections_config:
 
-
 _inputs:
   commit_type:
     type: select
