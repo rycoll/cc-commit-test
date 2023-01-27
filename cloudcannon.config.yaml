@@ -42,4 +42,3 @@ commit_templates:
         comment: "Limit this to 50 characters please"
   - label: Placeholders without inputs
     template_string: '[date|year] {kind}: {message}'
-
