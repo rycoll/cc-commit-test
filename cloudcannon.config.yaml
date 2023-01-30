@@ -11,7 +11,7 @@ _inputs:
 
 commit_templates:
   - label: Semantic commit
-    template_string: '{kind|trim}: { message |   trim } [[ date  |year]]'
+    template_string: '{kind|trim}: { message |   trim } [[date| day]/[ date|month]/[date| year  ]]'
     _inputs:
       kind:
         type: select
@@ -77,3 +77,4 @@ commit_templates:
         type: array
       object:
         type: object
+
