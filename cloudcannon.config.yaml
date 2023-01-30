@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 collections_config:
 
@@ -19,7 +20,7 @@ commit_templates:
       
       {body}
     extra_data:
-      subject_line: '{kind|lowercase|uppercase}: {subject|truncate=50}'
+      subject_line: '{kind|truncate}: {subject|truncate=50}'
     _inputs:
       kind:
         type: select
