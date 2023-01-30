@@ -1,3 +1,4 @@
+
 collections_config:
 
 _inputs:
@@ -11,7 +12,7 @@ _inputs:
 
 commit_templates:
   - label: Semantic commit
-    template_string: '{kind|trim}: { message |   trim } [[date| day]/[ date|month]/[date| year  ]]'
+    template_string: '{kind|trim}: {message|trim } [[date| day]/[ date|month]/[date| year  ]]' # spaces in data placeholders still don't work!
     _inputs:
       kind:
         type: select
