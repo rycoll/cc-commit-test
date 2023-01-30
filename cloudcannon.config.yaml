@@ -11,8 +11,6 @@ _inputs:
         - Feat
         - Fix
 
-
-
 commit_templates:
   - label: Semantic commit
     # spaces in data placeholders still don't work!
