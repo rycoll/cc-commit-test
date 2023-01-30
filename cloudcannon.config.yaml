@@ -12,6 +12,7 @@ _inputs:
         - Fix
 
 
+
 commit_templates:
   - label: Semantic commit
     # spaces in data placeholders still don't work!
@@ -35,7 +36,8 @@ commit_templates:
         type: textarea
     default_data:
       kind: Fix
-      subject: This is a commit message
+      subject: made some changes
+      body: Updated dependencies
       
   # - label: Conventional commit
   #   template_string: >-
