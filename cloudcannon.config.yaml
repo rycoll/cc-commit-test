@@ -13,7 +13,11 @@ _inputs:
 
 commit_templates:
   - label: Semantic commit
-    template_string: '{kind|trim}: {message|trim } [[date| day]/[ date|month]/[date| year  ]]' # spaces in data placeholders still don't work!
+    # spaces in data placeholders still don't work!
+    template_string: >-
+      {kind|lowercase}: {subject|trim}
+      
+      {body}
     _inputs:
       kind:
         type: select
@@ -23,11 +27,60 @@ commit_templates:
             - Feat
             - Fix
         comment: "What kind of change has been made?"
-      message:
-        comment: "Limit this to 50 characters please"
+      subject:
+        comment: "Write a 50-character summary in the present tense."
+      body:
+        type: textarea
     default_data:
       kind: Fix
-      message: This is a commit message
+      subject: This is a commit message
+      
+  # - label: Conventional commit
+  #   template_string: >-
+  #     {type|lowercase}: {message|trim}
+      
+  #     {body|trim}
+  #   _inputs:
+  #     type:  &conventional_commit_type
+  #       type: select
+  #       options:
+  #         values:
+  #           - fix
+  #           - feat
+  #           - refactor
+  #       comment: "What kind of change has been made?"
+  #     body: &conventional_commit_body
+  #       type: textarea
+  #     message:
+  #       comment: "Write a 50-character summary in the present tense."
+  #   default_data:
+  #     type: fix
+  #     message: This is a commit message
+      
+  # - label: Conventional commit with scope
+  #   template_string: >-
+  #     {type|lowercase}: {message|trim}
+      
+  #     {body|trim}
+  #   _inputs:
+  #     type: 
+  #       << &conventional_commit_type
+  #     body: 
+  #       << &conventional_commit_body
+  #     scope:
+  #       type: select
+  #       options:
+  #         values:
+  #           - api
+  #           - i18n
+  #           - frontend
+  #       comment: "What is the scope of this change?"
+  #     message:
+  #       comment: "Write a 50-character summary in the present tense."
+  #   default_data:
+  #     type: fix
+  #     message: This is a commit message
+      
   - label: Freeform
     template_string: 'Write whatever you want here!'
   - label: Timestamped commit
