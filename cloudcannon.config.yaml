@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 
 collections_config:
@@ -15,10 +16,12 @@ commit_templates:
   - label: Semantic commit
     # spaces in data placeholders still don't work!
     template_string: >-
-      {kind|lowercase}: {subject|trim}
+      {subject_line|trim}
       
       
       {body}
+    extra_data:
+      subject_line: '{kind|lowercase}: {subject}'
     _inputs:
       kind:
         type: select
