@@ -74,6 +74,7 @@ commit_templates:
     default_data:
       type: fix
       message: This is a commit message
+      breaking_change: false
       
       
   - label: Freeform
