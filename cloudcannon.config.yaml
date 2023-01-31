@@ -1,6 +1,5 @@
 timezone: Indian/Christmas
 collections_config:
-
 _inputs:
   commit_type:
     type: select
@@ -34,6 +33,8 @@ commit_templates:
         comment: "What kind of change has been made?"
       scope:
         comment: "Optional"
+      breaking_change_message:
+        type: text
       body:
         type: textarea
     default_data:
