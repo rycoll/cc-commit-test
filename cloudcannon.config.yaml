@@ -43,11 +43,10 @@ commit_templates:
       type: fix
       subject: made some changes
       body: Updated dependencies
-      
+
   - label: Conventional commit
     template_string: |
       {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}
-  
       {formatted_body|if=body}{footer|trim}
     extra_data:
       exclamation_mark: "!"
