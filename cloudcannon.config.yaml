@@ -11,7 +11,7 @@ _inputs:
 
 commit_templates:
   - label: F5 commit template
-    template_string: >|
+    template_string: |
       {type}{formatted_scope|if=scope}: {subject}
       
       {breaking_change|if=breaking_change_message}{body}
