@@ -10,7 +10,7 @@ _inputs:
         - Fix
 
 commit_templates:
-  - template_string: "{commit_type}: {message|trim}""
+  - template_string: "{commit_type}: {message|trim}"
     _inputs:
       commit_type:
         type: select
