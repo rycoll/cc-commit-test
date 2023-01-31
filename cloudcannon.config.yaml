@@ -10,6 +10,23 @@ _inputs:
         - Fix
 
 commit_templates:
+  - template_string: {commit_type}: {message|trim}
+    _inputs:
+      commit_type:
+        type: select
+        options:
+          values:
+            - feature
+            - fix
+            - refactor
+  - template_string: "{message}{breaking_change|if=breaking_change_message}"
+    _inputs:
+      breaking_change_message:
+        type: text
+    extra_data:
+      breaking_change: |-
+        
+        ⚠️ {breaking_change_message}
   - label: F5 commit template
     template_string: "{type}{formatted_scope|if=scope}: {subject}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
     extra_data:
