@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -10,39 +11,6 @@ _inputs:
         - Fix
 
 commit_templates:
-  - label: F5 commit template
-    template_string: "{type}{formatted_scope|if=scope}: {subject}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
-    extra_data:
-      formatted_scope: '({scope|lowercase})'
-      breaking_change: |+
-        BREAKING CHANGE: {breaking_change_message}
-      
-      formatted_body: |+
-        {body}
-      
-    _inputs:
-      type:
-        type: select
-        options:
-          values:
-            - feat
-            - fix
-            - refactor
-            - perf
-            - docs
-            - style
-            - test
-        comment: "What kind of change has been made?"
-      scope:
-        comment: "Optional"
-      breaking_change_message:
-        type: text
-      body:
-        type: textarea
-    default_data:
-      type: fix
-      subject: made some changes
-      body: Updated dependencies
 
   - label: Conventional commit
     template_string: |
@@ -77,6 +45,40 @@ commit_templates:
       type: fix
       message: This is a commit message
       breaking_change: false
+
+  - label: F5 commit template
+    template_string: "{type}{formatted_scope|if=scope}: {subject}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
+    extra_data:
+      formatted_scope: '({scope|lowercase})'
+      breaking_change: |+
+        BREAKING CHANGE: {breaking_change_message}
+      
+      formatted_body: |+
+        {body}
+      
+    _inputs:
+      type:
+        type: select
+        options:
+          values:
+            - feat
+            - fix
+            - refactor
+            - perf
+            - docs
+            - style
+            - test
+        comment: "What kind of change has been made?"
+      scope:
+        comment: "Optional"
+      breaking_change_message:
+        type: text
+      body:
+        type: textarea
+    default_data:
+      type: fix
+      subject: made some changes
+      body: Updated dependencies
       
       
   - label: Freeform
