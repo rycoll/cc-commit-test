@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -19,7 +20,11 @@ commit_templates:
     extra_data:
       formatted_scope: '({scope|lowercase})'
       breaking_change: |
-        BREAKING CHANGE: {breaking_change_message}\n\n
+        BREAKING CHANGE: {breaking_change_message}
+        
+        
+        
+        
     _inputs:
       type:
         type: select
