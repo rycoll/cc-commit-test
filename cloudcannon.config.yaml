@@ -1,4 +1,3 @@
-
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -47,14 +46,15 @@ commit_templates:
       
   - label: Conventional commit
     template_string: |
-      {type}{exclamation_mark|if=breaking_change}: {message|trim}
-      
-      {body|trim}
-      
-      {footer|trim}
+      {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}
+  
+      {formatted_body|if=body}{footer|trim}
     extra_data:
       exclamation_mark: "!"
       formatted_scope: '({scope|lowercase})'
+      formatted_body: |+
+        {body|trim}
+        
     _inputs:
       type:
         type: select
