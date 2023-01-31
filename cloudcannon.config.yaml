@@ -46,15 +46,16 @@ commit_templates:
 
   - label: Conventional commit
     template_string: |
-      {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}
-      
-      {formatted_body|if=body}{footer|trim}
+      {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}{formatted_body|if=body}{formatted_footer|if=footer}
     extra_data:
       exclamation_mark: "!"
       formatted_scope: '({scope|lowercase})'
       formatted_body: |+
       
         {body|trim}
+      formatted_footer: |+
+      
+        {footer|trim}
     _inputs:
       type:
         type: select
@@ -64,6 +65,7 @@ commit_templates:
             - feat
             - refactor
         comment: "What kind of change has been made?"
+      footer:
       scope:
       breaking_change:
         type: checkbox
