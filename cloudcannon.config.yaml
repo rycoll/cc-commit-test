@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -44,52 +45,35 @@ commit_templates:
       subject: made some changes
       body: Updated dependencies
       
-  # - label: Conventional commit
-  #   template_string: >-
-  #     {type|lowercase}: {message|trim}
+  - label: Conventional commit
+    template_string: |
+      {type}{exclamation_mark|if=breaking_change}: {message|trim}
       
-  #     {body|trim}
-  #   _inputs:
-  #     type:  &conventional_commit_type
-  #       type: select
-  #       options:
-  #         values:
-  #           - fix
-  #           - feat
-  #           - refactor
-  #       comment: "What kind of change has been made?"
-  #     body: &conventional_commit_body
-  #       type: textarea
-  #     message:
-  #       comment: "Write a 50-character summary in the present tense."
-  #   default_data:
-  #     type: fix
-  #     message: This is a commit message
+      {body|trim}
       
-  # - label: Conventional commit with scope
-  #   template_string: >-
-  #     {type|lowercase}: {message|trim}
-      
-  #     {body|trim}
-  #   _inputs:
-  #     type: 
-  #       << &conventional_commit_type
-  #     body: 
-  #       << &conventional_commit_body
-  #     scope:
-  #       type: select
-  #       options:
-  #         values:
-  #           - api
-  #           - i18n
-  #           - frontend
-  #       comment: "What is the scope of this change?"
-  #     message:
-  #       comment: "Write a 50-character summary in the present tense."
-  #   default_data:
-  #     type: fix
-  #     message: This is a commit message
-      
+      {footer|trim}
+    extra_data:
+      exclamation_mark: "!"
+      formatted_scope: '({scope|lowercase})'
+    _inputs:
+      type:
+        type: select
+        options:
+          values:
+            - fix
+            - feat
+            - refactor
+        comment: "What kind of change has been made?"
+      scope:
+      breaking_change:
+        type: checkbox
+      body: 
+        type: textarea
+      message:
+        comment: "Write a 50-character summary in the present tense."
+    default_data:
+      type: fix
+      message: This is a commit message
   - label: Freeform
     template_string: 'Write whatever you want here!'
   - label: Timestamped commit
