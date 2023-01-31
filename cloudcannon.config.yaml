@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -47,13 +48,14 @@ commit_templates:
   - label: Conventional commit
     template_string: |
       {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}
+      
       {formatted_body|if=body}{footer|trim}
     extra_data:
       exclamation_mark: "!"
       formatted_scope: '({scope|lowercase})'
       formatted_body: |+
+      
         {body|trim}
-        
     _inputs:
       type:
         type: select
@@ -73,6 +75,8 @@ commit_templates:
     default_data:
       type: fix
       message: This is a commit message
+      
+      
   - label: Freeform
     template_string: 'Write whatever you want here!'
   - label: Timestamped commit
