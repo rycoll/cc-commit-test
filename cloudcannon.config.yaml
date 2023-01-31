@@ -27,6 +27,7 @@ commit_templates:
     extra_data:
       breaking_change: |-
         
+        
         ⚠️ {breaking_change_message}
   # - label: F5 commit template
   #   template_string: "{type}{formatted_scope|if=scope}: {subject}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
