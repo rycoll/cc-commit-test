@@ -1,4 +1,3 @@
-
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -51,10 +50,10 @@ commit_templates:
     extra_data:
       exclamation_mark: "!"
       formatted_scope: '({scope|lowercase})'
-      formatted_body: |
+      formatted_body: |-
       
         {body|trim}
-      formatted_footer: |
+      formatted_footer: |-
       
         {footer|trim}
     _inputs:
