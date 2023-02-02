@@ -19,140 +19,140 @@ commit_templates:
             - feature
             - fix
             - refactor
-  - template_string: "{message}{breaking_change|if=breaking_change_message}"
-    _inputs:
-      breaking_change_message:
-        type: text
-    extra_data:
-      breaking_change: |-
+  # - template_string: "{message}{breaking_change|if=breaking_change_message}"
+  #   _inputs:
+  #     breaking_change_message:
+  #       type: text
+  #   extra_data:
+  #     breaking_change: |-
         
         
-        ⚠️ {breaking_change_message}
-  - label: F5 commit template
-    template_string: "{type}{formatted_scope|if=scope}: {subject}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
-    extra_data:
-      formatted_scope: '({scope|lowercase})'
-      breaking_change: |-
+  #       ⚠️ {breaking_change_message}
+  # - label: F5 commit template
+  #   template_string: "{type}{formatted_scope|if=scope}: {subject}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
+  #   extra_data:
+  #     formatted_scope: '({scope|lowercase})'
+  #     breaking_change: |-
         
-        BREAKING CHANGE: {breaking_change_message}
-      formatted_body: |-
+  #       BREAKING CHANGE: {breaking_change_message}
+  #     formatted_body: |-
         
-        {body}
-    _inputs:
-      type:
-        type: select
-        options:
-          values:
-            - feat
-            - fix
-            - refactor
-            - perf
-            - docs
-            - style
-            - test
-        comment: "What kind of change has been made?"
-      scope:
-        comment: "Optional"
-      breaking_change_message:
-        type: text
-      body:
-        type: textarea
-    default_data:
-      type: fix
-      subject: made some changes
-      body: Updated dependencies
+  #       {body}
+  #   _inputs:
+  #     type:
+  #       type: select
+  #       options:
+  #         values:
+  #           - feat
+  #           - fix
+  #           - refactor
+  #           - perf
+  #           - docs
+  #           - style
+  #           - test
+  #       comment: "What kind of change has been made?"
+  #     scope:
+  #       comment: "Optional"
+  #     breaking_change_message:
+  #       type: text
+  #     body:
+  #       type: textarea
+  #   default_data:
+  #     type: fix
+  #     subject: made some changes
+  #     body: Updated dependencies
 
-  - label: Conventional commit
-    template_string: |
-      {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}{formatted_body|if=body}{formatted_footer|if=footer}
-    extra_data:
-      exclamation_mark: "!"
-      formatted_scope: '({scope|lowercase})'
-      formatted_body: |-
+  # - label: Conventional commit
+  #   template_string: |
+  #     {type}{formatted_scope|if=scope}{exclamation_mark|if=breaking_change}: {message|trim}{formatted_body|if=body}{formatted_footer|if=footer}
+  #   extra_data:
+  #     exclamation_mark: "!"
+  #     formatted_scope: '({scope|lowercase})'
+  #     formatted_body: |-
       
-        {body|trim}
-      formatted_footer: |-
+  #       {body|trim}
+  #     formatted_footer: |-
       
-        {footer|trim}
-    _inputs:
-      type:
-        type: select
-        options:
-          values:
-            - fix
-            - feat
-            - refactor
-        comment: "What kind of change has been made?"
-      footer:
-      scope:
-      breaking_change:
-        type: checkbox
-      body: 
-        type: textarea
-      message:
-        comment: "Write a 50-character summary in the present tense."
-    default_data:
-      type: fix
-      message: This is a commit message
-      breaking_change: false
+  #       {footer|trim}
+  #   _inputs:
+  #     type:
+  #       type: select
+  #       options:
+  #         values:
+  #           - fix
+  #           - feat
+  #           - refactor
+  #       comment: "What kind of change has been made?"
+  #     footer:
+  #     scope:
+  #     breaking_change:
+  #       type: checkbox
+  #     body: 
+  #       type: textarea
+  #     message:
+  #       comment: "Write a 50-character summary in the present tense."
+  #   default_data:
+  #     type: fix
+  #     message: This is a commit message
+  #     breaking_change: false
 
-  - label: Header and Body
-    template_string: |
-      {header|truncate=50}
+  # - label: Header and Body
+  #   template_string: |
+  #     {header|truncate=50}
       
-      {body|wrap=72}
-    _inputs:
-      body:
-        type: textarea
-  - label: Freeform
-    template_string: 'Write whatever you want here!'
-  - label: Timestamped commit
-    template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
-  - label: Commit message from file
-    template_path: 'gitmessage.txt'
-  - label: Commit message from missing file
-    template_path: 'gitmossoge.txt'
-  - label: Describe changes
-    template_string: '[changes]'
-  - template_string: Unlabelled!
-  - template_string: '{message|wrap_at:5}'
-  - label: Inputs without placeholders
-    template_string: '[date|year] Commit message'
-    _inputs:
-      kind:
-        type: select
-        options:
-          values:
-            - Chore
-            - Feat
-            - Fix
-        comment: "What kind of change has been made?"
-      message:
-        comment: "Limit this to 50 characters please"
-  - label: Placeholders without inputs
-    template_string: '[date|year] {kind}: {message}'
-  - label: Crazy inputs
-    template_string: >- 
-      URL {url}
+  #     {body|wrap=72}
+  #   _inputs:
+  #     body:
+  #       type: textarea
+  # - label: Freeform
+  #   template_string: 'Write whatever you want here!'
+  # - label: Timestamped commit
+  #   template_string: 'Changed at [date|day]/[date|month]/[date|year], [date|time] [date|timezone]'
+  # - label: Commit message from file
+  #   template_path: 'gitmessage.txt'
+  # - label: Commit message from missing file
+  #   template_path: 'gitmossoge.txt'
+  # - label: Describe changes
+  #   template_string: '[changes]'
+  # - template_string: Unlabelled!
+  # - template_string: '{message|wrap_at:5}'
+  # - label: Inputs without placeholders
+  #   template_string: '[date|year] Commit message'
+  #   _inputs:
+  #     kind:
+  #       type: select
+  #       options:
+  #         values:
+  #           - Chore
+  #           - Feat
+  #           - Fix
+  #       comment: "What kind of change has been made?"
+  #     message:
+  #       comment: "Limit this to 50 characters please"
+  # - label: Placeholders without inputs
+  #   template_string: '[date|year] {kind}: {message}'
+  # - label: Crazy inputs
+  #   template_string: >- 
+  #     URL {url}
       
-      Image {image}
+  #     Image {image}
       
-      Color {color}
+  #     Color {color}
       
-      Rich Text {rich_text}
+  #     Rich Text {rich_text}
       
-      List {list}
+  #     List {list}
       
-      Object {object}
-    _inputs:
-      link:
-        type: url
-      image:
-        type: image
-      rich_text:
-        type: html
-      list:
-        type: array
-      object:
-        type: object
+  #     Object {object}
+  #   _inputs:
+  #     link:
+  #       type: url
+  #     image:
+  #       type: image
+  #     rich_text:
+  #       type: html
+  #     list:
+  #       type: array
+  #     object:
+  #       type: object
 
