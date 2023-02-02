@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 collections_config:
 _inputs:
@@ -19,6 +20,17 @@ commit_templates:
             - feature
             - fix
             - refactor
+  - template_string: "{commit_type}: {message|trim}"
+    _inputs:
+      commit_type:
+        type: select
+        options:
+          values:
+            - feature
+            - fix
+            - refactor
+      message:
+        type: textarea
   # - template_string: "{message}{breaking_change|if=breaking_change_message}"
   #   _inputs:
   #     breaking_change_message:
