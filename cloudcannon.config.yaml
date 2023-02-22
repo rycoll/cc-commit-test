@@ -10,14 +10,9 @@ _inputs:
         - Fix
 
 commit_templates:
-  - label: "Default"
-    template_string: |-
-      {type}: {subject|uppercase}
-      The following changes: [changes]
-      Committed by [author] at [date]
-    default_data:
-      type: 'CloudCannon'
-      subject: 'changes'
+  label: "Default"
+  template_string: |-
+    Committed by [author] at [date]
 
 
 # commit_templates:
