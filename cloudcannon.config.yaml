@@ -10,9 +10,9 @@ _inputs:
         - Fix
 
 commit_templates:
-  label: "Default"
-  template_string: |-
-    Committed by [author] at [date]
+  - label: "Default"
+    template_string: |-
+      Committed by [author] at [date]
 
 
 # commit_templates:
