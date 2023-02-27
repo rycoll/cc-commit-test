@@ -16,11 +16,11 @@ _inputs:
         - Feat
         - Fix
 
-commit_templates:
-  - label: "List of all changes"
-    template_string: "[changes]"
-  - label: "Summary of changes"
-    template_string: "[default_commit_message]"
+# commit_templates:
+#   - label: "List of all changes"
+#     template_string: "[changes]"
+#   - label: "Summary of changes"
+#     template_string: "[default_commit_message]"
 
 
 # commit_templates:
