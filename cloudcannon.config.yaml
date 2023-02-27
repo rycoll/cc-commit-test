@@ -16,9 +16,10 @@ _inputs:
         - Fix
 
 commit_templates:
-  - label: "Default"
-    template_string: |-
-      Committed by [author] at [date]
+  - label: "List of all changes"
+    template_string: "[changes]"
+  - label: "Summary of changes"
+    template_string: "[default_commit_message]"
 
 
 # commit_templates:
