@@ -1,6 +1,11 @@
 timezone: Indian/Christmas
+
 collections_config:
   things:
+    schemas:
+      default:
+        path: schemas/thing.md
+
 _inputs:
   commit_type:
     type: select
