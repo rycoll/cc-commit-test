@@ -1,3 +1,5 @@
+
+
 timezone: Indian/Christmas
 
 collections_config:
@@ -55,8 +57,9 @@ commit_templates:
         
 #         ⚠️ {breaking_change_message}
   - label: F5 commit template
-    template_string: "{type|default='fix'}{formatted_scope|if=scope}: {subject|default='made some changes'}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
+    template_string: "{fallback_type}{formatted_scope|if=scope}: {subject|default='made some changes'}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
     extra_data:
+      fallback_type: "{type|default='fix'}""
       formatted_scope: '({scope|lowercase})'
       breaking_change: |-
         
