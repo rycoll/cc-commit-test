@@ -1,5 +1,3 @@
-
-
 timezone: Indian/Christmas
 
 collections_config:
@@ -57,7 +55,7 @@ commit_templates:
         
 #         ⚠️ {breaking_change_message}
   - label: F5 commit template
-    template_string: "{type|default=fix}{formatted_scope|if=scope}: {subject|default=made some changes}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
+    template_string: "{type|default='fix'}{formatted_scope|if=scope}: {subject|default='made some changes'}{breaking_change|if=breaking_change_message}{formatted_body|if=body}"
     extra_data:
       formatted_scope: '({scope|lowercase})'
       breaking_change: |-
@@ -65,7 +63,7 @@ commit_templates:
         BREAKING CHANGE: {breaking_change_message}
       formatted_body: |-
         
-        {body|default=Updated dependencies}
+        {body|default='Updated dependencies'}
     _inputs:
       type:
         type: select
