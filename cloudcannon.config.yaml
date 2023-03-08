@@ -1,3 +1,4 @@
+
 timezone: Indian/Christmas
 
 collections_config:
@@ -26,7 +27,7 @@ commit_templates:
   - template_string: '🐸 [default_commit_message]'
   - template_string: '🐷 [default_commit_message]'
   - template_string: '{message}'
-  - template_string: "{commit_type}: {message|trim}"
+  - template_string: "{commit_type|default='fix'}: {message|trim}"
     _inputs:
       commit_type:
         label: Type of change
