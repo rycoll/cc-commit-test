@@ -16,7 +16,7 @@ _inputs:
         - Fix
 
 commit_templates:
-  - template_string: "{message}{skip_ci|if=skip_checks}",
+  - template_string: "{message}{skip_ci|if=skip_checks}"
     _inputs:
       skip_checks:
         type: "checkbox"
