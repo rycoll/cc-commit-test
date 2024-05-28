@@ -112,8 +112,8 @@ commit_templates:
         comment: "Write a 50-character summary in the present tense."
 
   - label: Header and Body
-    template_string: |
-      {header|truncate=50}
+    template_string: >
+      Header: {header|truncate=50}
       
       {body|wrap=72}
     _inputs:
